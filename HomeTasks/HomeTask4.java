@@ -44,7 +44,7 @@ public class HomeTask4 {
         routeSearch(queueRowWaypoint, queueColumnWaypoint, finalRowWaypoint, finalColumnWaypoint, route, queueRowFinish, queueColumnFinish, startArray);
         
         printArray(rows, columns, arr2);
-        printArray(rows, columns, startArray);
+       
         routeOutput(startArray, rows, columns, finalRowWaypoint, finalColumnWaypoint);
 
 
