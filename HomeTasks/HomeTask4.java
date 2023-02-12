@@ -6,7 +6,7 @@
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Scanner;
+
 
 public class HomeTask4 {
     public static void main(String[] args) 
@@ -17,10 +17,7 @@ public class HomeTask4 {
         int columns = 9;
         int startingPointRow = 5; 
         int startingPointColumns = 3;
-        int finishgPointRow1 = 10; 
-        int finishPointColumns1 = 9;
-        int finishPointRow2 = 2; 
-        int finishPointColumns2 = 8;
+     
         ArrayList <Integer> waypoints = new ArrayList <Integer>();
         Queue<Integer> queueRow = new LinkedList<Integer>();
         Queue<Integer> queueColumn = new LinkedList<Integer>();
@@ -70,7 +67,6 @@ public class HomeTask4 {
       System.out.println();
     }
     System.out.println();
-
    }
 
    public static void addBlockAndBorders(int a, int b, int [][]f)
@@ -117,19 +113,14 @@ public class HomeTask4 {
   
    public static void waveMotion(int startRow, int startColumn, int[][]f, Queue<Integer> queueRow, Queue<Integer> queueColumn, Queue<Integer> queueRowFinish, Queue<Integer> queueColumnFinish, ArrayList <Integer> waypoints)
    {
-    
-    
-
       int itemRow = startRow;
       queueRow.add(itemRow);
       int itemColumn = startColumn;
       queueColumn.add(itemColumn);
-      ;
+      
       int row = 0;
       int col = 0;
-      int rowFinish = 0;
-      int colFinish = 0;
-
+      
       boolean isExit = false;
  
       while(!isExit)
@@ -137,7 +128,6 @@ public class HomeTask4 {
         row = queueRow.remove();
         col = queueColumn.remove();
         
-   
        if(f[row-1][col]==0 )
        {
         f[row-1][col]=f[row][col]+1;
@@ -162,7 +152,6 @@ public class HomeTask4 {
         queueRow.add(row);
         queueColumn.add(col-1);
        }
-
        if (queueRow.isEmpty())
        {
         
@@ -173,10 +162,8 @@ public class HomeTask4 {
         System.out.println("Выход найден. Он в точке " + row + " - "+ (col+1));
         f[row][col+1]=f[row][col]+1;
         queueRowFinish.add(row);
-        
         queueColumnFinish.add(col+1);
         waypoints.add(f[row][col+1]);
-    
        }
        if(f[row][col-1]==-2)
        { 
@@ -185,7 +172,6 @@ public class HomeTask4 {
         queueRowFinish.add(row);
         queueColumnFinish.add(col-1);
         waypoints.add(f[row][col-1]);
-      
        } 
        if(f[row+1][col]==-2)
        {
@@ -193,8 +179,7 @@ public class HomeTask4 {
         f[row+1][col]=f[row][col]+1;
         queueRowFinish.add(row+1);
         queueColumnFinish.add(col);
-        waypoints.add(f[row+1][col]);
-        
+        waypoints.add(f[row+1][col]); 
        }
        if(f[row-1][col]==-2)
        {
@@ -203,12 +188,7 @@ public class HomeTask4 {
         queueRowFinish.add(row-1);
         queueColumnFinish.add(col);
         waypoints.add(f[row-1][col]);
-      
        }
-
-
-
-
     }
    }
 
@@ -289,9 +269,7 @@ public class HomeTask4 {
        {
          for(int j=0; j<bx2; j++)
          {
-             finishArray[i][j] = f[i][j] +"";
-        
-            
+             finishArray[i][j] = f[i][j] +"";            
          }
        
        }
@@ -317,8 +295,6 @@ public class HomeTask4 {
        }
     System.out.println();
     }
-
-
 }
 
 
